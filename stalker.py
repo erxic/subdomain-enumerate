@@ -35,10 +35,10 @@ def print_banner(font, slowprint):
     os.system("clear")
     slowprint(font.RED + """
      ____ _____  _    _     _  _______ ____
-    / ___|_   _|/ \  | |   | |/ / ____|  _ \\
-    \___ \ | | / _ \ | |   | ' /|  _| | |_) |
-     ___) || |/ ___ \| |___| . \| |___|  _ <
-    |____/ |_/_/   \_\_____|_|\_\_____|_| \_\\
+    / ___|_   _|/ \\  | |   | |/ / ____|  _ \\
+    \\___ \\ | | / _ \\ | |   | ' /|  _| | |_) |
+     ___) || |/ ___ \\| |___| . \\| |___|  _ <
+    |____/ |_/_/   \\_\\_____|_|\\_\\_____|_| \\_\\
     """)
 
     slowprint(font.CYAN + font.BOLD + """DEV: KIRA\nINSTAGRAM: @_akbrrr12\nGITHUB: kiraaa99\nDISCLAIMER: SEMUA TINDAKAN ILEGAL YANG ANDA LAKUKAN MENGGUNAKAN TOOL INI ADALAH DILUAR TANGGUNG JAWAB KAMI !!!\n""")
