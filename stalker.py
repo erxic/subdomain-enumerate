@@ -59,7 +59,7 @@ def checking_subdomain(sub, domain, output_subdomain):
     try:
         domain_resolver = f"{sub}.{domain}"
         nilai_ip = bool(dns.resolver.resolve(
-            domain_resolver, raise_on_no_answer=True, lifetime=15.0))
+            domain_resolver, raise_on_no_answer=True, lifetime=5.0))
         if nilai_ip:
             output_subdomain.append(domain_resolver)
 
@@ -77,9 +77,9 @@ def checking_subdomain(sub, domain, output_subdomain):
 
 def check_superdomain(domain: str):
     try:
-        dns.resolver.resolve(domain)
+        dns.resolver.resolve(domain, raise_on_no_answer=True, lifetime=3.0)
         return True
-    except dns.resolver.NXDOMAIN:
+    except (dns.resolver.NXDOMAIN, dns.resolver.NoAnswer, dns.resolver.Timeout):
         return False
 
 
@@ -92,7 +92,9 @@ while True:
 # validasi domain apakan valid
     if not check_superdomain(domain=domain):
         print(font.RED+f"domain not valid you should check the network or your domain".upper()+font.ECD)
-        time.sleep(3.00)
+        for i in range(3):
+            print(i+1, end="\r")
+            time.sleep(1.00)
         continue
 
     # untuk menghitung berapa lama enumerate dijalankan

@@ -1,6 +1,6 @@
 # subdomain-enumerate
 
-optimalize code
+stalker adalah tool yang di gunakan untuk mapping subdomain yang terdaftar dalam suatu super domain tertentu dengan cara mengenumerate kemungkinan subdomain yang terdaftar pada super domain.
 
 ## Required
 
@@ -13,7 +13,7 @@ optimalize code
 ## info  
 
 - sub_domain size = 999
-- Timeout per checking = 15 second
+- Timeout per checking = 5 second
   
     Note:
         harus pakek internet bos
