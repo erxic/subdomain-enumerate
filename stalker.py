@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # untuk menjalankan: python stalker.py {nama domain}
-=======
-# untuk menjwzualankan: python stalker.py {nama domain}
->>>>>>> 0732f06982d2377fcf6f9e876a647de16a7864a5
 import dns.resolver
 import os
 import sys
@@ -128,8 +124,4 @@ while True:
     if user_args != "Y":
         break
 
-<<<<<<< HEAD
 # end main_function
-=======
-# end main_function
->>>>>>> 0732f06982d2377fcf6f9e876a647de16a7864a5
