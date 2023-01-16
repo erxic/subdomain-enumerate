@@ -92,7 +92,9 @@ while True:
 # validasi domain apakan valid
     if not check_superdomain(domain=domain):
         print(font.RED+f"domain not valid you should check the network or your domain".upper()+font.ECD)
-        time.sleep(3.00)
+        for i in range(3):
+            time.sleep(1.00)
+            print(i+1, end="\r")
         continue
 
     # untuk menghitung berapa lama enumerate dijalankan
