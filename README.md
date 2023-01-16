@@ -13,7 +13,7 @@ stalker adalah tool yang di gunakan untuk mapping subdomain yang terdaftar dalam
 ## info  
 
 - sub_domain size = 999
-- Timeout per checking = 15 second
+- Timeout per checking = 5 second
   
     Note:
         harus pakek internet bos
