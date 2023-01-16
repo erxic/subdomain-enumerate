@@ -72,6 +72,15 @@ def checking_subdomain(sub, domain, output_subdomain):
         quit()
     except KeyboardInterrupt:
         quit()
+#  validate
+
+
+def check_superdomain(domain: str):
+    try:
+        dns.resolver.resolve(domain)
+        return True
+    except dns.resolver.NXDOMAIN:
+        return False
 
 
 # main_function
@@ -80,6 +89,11 @@ while True:
 
     # membaca argument dari terminal
     domain = input("masukkan domain: ")
+# validasi domain apakan valid
+    if not check_superdomain(domain=domain):
+        print(font.RED+f"domain not valid you should check the network or your domain".upper()+font.ECD)
+        time.sleep(3.00)
+        continue
 
     # untuk menghitung berapa lama enumerate dijalankan
     start = (time.perf_counter_ns())
