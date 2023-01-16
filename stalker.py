@@ -106,11 +106,7 @@ while True:
         t = Thread(target=checking_subdomain(sub=sub, domain=domain,
                    output_subdomain=output_subdomain))
         t.start()
-<<<<<<< HEAD
         print(" "+animated.__getitem__(index % animated.__len__()-1) +
-=======
-        print(":"+animated.__getitem__(index % animated.__len__()-1) +
->>>>>>> 0732f06982d2377fcf6f9e876a647de16a7864a5
               f"({index}/{subdomain_array.__len__()})\r", end="\r")
         index += 1
         thread_pool.append(t)
