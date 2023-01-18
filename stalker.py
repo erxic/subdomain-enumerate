@@ -80,6 +80,9 @@ def check_superdomain(domain: str):
         return True
     except dns.resolver.NXDOMAIN:
         return False
+def check_num(num):
+    if num.isnumeric():
+        return False
 
 # main_function
 while True:
@@ -89,8 +92,18 @@ while True:
     domain = input("masukkan domain: ")
     if not check_superdomain(domain=domain):
         print(font.RED+f"domain not valid you should check the network or your domain".upper()+font.ECD)
-        time.sleep(3.00)
+        for i in range(3):
+            print(i+1, end="\r")
+            time.sleep(1.00)
         continue
+    if check_num(num=domain):
+        print("domain is not valid!")
+        for i in range(3):
+            print(i+1, end="\r")
+            time.sleep(1.00)
+        continue
+
+        
     # untuk menghitung berapa lama enumerate dijalankan
     start = (time.perf_counter_ns())
     thread_pool: list[Thread] = []
