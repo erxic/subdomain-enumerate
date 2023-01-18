@@ -80,6 +80,7 @@ def check_superdomain(domain: str):
         return True
     except dns.resolver.NXDOMAIN:
         return False
+#cek number
 def check_num(num):
     if num.isnumeric():
         return False
