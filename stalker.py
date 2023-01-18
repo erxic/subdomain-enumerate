@@ -4,6 +4,8 @@ import os
 import sys
 import time
 from threading import Thread
+
+
 class font:
     HEADER = '\033[95m'
     BLUE = '\033[94m'
@@ -15,11 +17,13 @@ class font:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+
 def slowprint(s):
     for c in s + '\n':
         sys.stdout.write(c)
         sys.stdout.flush()
         time.sleep(.1/10)
+
 
 def print_banner(font, slowprint):
     os.system("clear")
@@ -38,7 +42,6 @@ subdomain_array = ['www', 'mail', 'ftp', 'localhost', 'webmail', 'smtp', 'pop', 
                    'campus', 'reg', 'digital', 'demo2', 'da', 'tr', 'otrs', 'web6', 'ns02', 'mailgw', 'education', 'order', 'piwik', 'banners', 'rs', 'se', 'venus', 'internal', 'webservices', 'cm', 'whois', 'sync', 'lb', 'is', 'code', 'click', 'w2', 'bugzilla', 'virtual', 'origin-www', 'top', 'customer', 'pub', 'hotel', 'openx', 'log', 'uat', 'cdn3', 'images0', 'cgi', 'posta', 'reseller', 'soft', 'movie', 'mba', 'n', 'r', 'developer', 'nms', 'ns9', 'webcam', 'construtor', 'ebook', 'ftp3', 'join', 'dashboard', 'bi', 'wpad', 'admin2', 'agent', 'wm', 'books', 'joomla', 'hotels', 'ezproxy', 'ds', 'sa', 'katalog', 'team', 'emkt', 'antispam', 'adv', 'mercury', 'flash', 'myadmin', 'sklep', 'newsite', 'law', 'pl', 'ntp2', 'x', 'srv1', 'mp3', 'archives', 'proxy2', 'ps', 'pic', 'ir', 'orion', 'srv', 'mt', 'ocs', 'server3', 'meeting', 'v1', 'delta', 'titan', 'manager', 'subscribe', 'develop', 'wsus', 'oascentral', 'mobi', 'people', 'galleries', 'wwwtest', 'backoffice', 'sg', 'repo', 'soporte', 'www8', 'eu', 'ead', 'students', 'hq', 'awstats', 'ec', 'security', 'school', 'corporate', 'podcast', 'vote', 'conf', 'magento', 'mx4', 'webservice', 'tour', 's5', 'power', 'correio', 'mon', 'mobilemail', 'weather', 'international', 'prod', 'account', 'xx', 'pages', 'pgadmin', 'bfn2', 'webserver', 'www-test', 'maintenance', 'me', 'magazine', 'syslog', 'int', 'view', 'enews', 'ci', 'au', 'mis', 'dev3', 'pdf', 'mailgate', 'v3', 'ss', 'internet', 'host1', 'smtp01', 'journal', 'wireless', 'opac', 'w1', 'signup', 'database', 'demo1', 'br', 'android', 'career', 'listserv', 'bt', 'spb', 'cam', 'contacts', 'webtest', 'resources', '1', 'life', 'mail6', 'transfer', 'app1', 'confluence', 'controlpanel', 'secure2', 'puppet', 'classifieds', 'tunet', 'edge', 'biz', 'host3', 'red', 'newmail', 'mx02', 'sb', 'physics', 'ap', 'epaper', 'sts', 'proxy1', 'ww1', 'stg', 'sd', 'science', 'star', 'www9', 'phoenix', 'pluto', 'webdav', 'booking', 'eshop', 'edit', 'panelstats', 'xmpp', 'food', 'cert', 'adfs', 'mail02', 'cat', 'edm', 'vcenter', 'mysql2', 'sun', 'phone', 'surveys', 'smart', 'system', 'twitter', 'updates', 'webmail1', 'logs', 'sitedefender', 'as', 'cbf1', 'sugar', 'contact', 'vm', 'ipad', 'traffic', 'dm', 'saturn', 'bo', 'network', 'ac', 'ns13', 'webdev', 'libguides', 'asp', 'tm', 'core', 'mms', 'abc', 'scripts', 'fm', 'sm', 'test4', 'nas', 'newsletters', 'rsc', 'cluster', 'learn', 'panelstatsmail', 'lb1', 'usa', 'apollo', 'pre', 'terminal', 'l', 'tc', 'movies', 'sh', 'fms', 'dms', 'z', 'base', 'jwc', 'gs', 'kvm', 'bfn1', 'card', 'web02', 'lg', 'editor', 'metrics', 'feed', 'repository', 'asterisk', 'sns', 'global', 'counter', 'ch', 'sistemas', 'pc', 'china', 'u', 'payments', 'ma', 'pics', 'www10', 'e-learning', 'auction', 'hub', 'sf', 'cbf8', 'forum2', 'ns14', 'app2', 'passport', 'hd', 'talk', 'ex', 'debian', 'ct', 'rc', '2012', 'imap4', 'blog2', 'ce', 'sk', 'relay2', 'green', 'print', 'geo', 'multimedia', 'iptv', 'backup2', 'webapps', 'audio', 'ro', 'smtp4', 'pg', 'ldap2', 'backend', 'profile', 'oldwww', 'drive', 'bill', 'listas', 'orders', 'win', 'mag', 'apply', 'bounce', 'mta', 'hp', 'suporte', 'dir', 'pa', 'sys', 'mx0', 'ems', 'antivirus', 'web8', 'inside', 'play', 'nic', 'welcome', 'premium', 'exam', 'sub', 'cz', 'omega', 'boutique', 'pp', 'management', 'planet', 'ww3', 'orange', 'c1', 'zzb', 'form', 'ecommerce', 'tmp', 'plus', 'openvpn', 'fw1', 'hk', 'owncloud', 'history', 'clientes', 'srv2', 'img4', 'open', 'registration', 'mp', 'blackboard', 'fc', 'static3', 'server4', 's6', 'ecard', 'dspace', 'dns01', 'md', 'mcp', 'ares', 'spf', 'kms', 'intranet2', 'accounts', 'webapp', 'ask', 'rd', 'www-dev', 'gw2', 'mall', 'bg', 'teste', 'ldap1', 'real', 'm3', 'wave', 'movil', 'portal2', 'kids', 'gw1', 'ra', 'tienda', 'private', 'po', '2013', 'cdn4', 'gps', 'km', 'ent', 'tt', 'ns21', 'at', 'athena', 'cbf2', 'webmail3', 'mob', 'matrix', 'ns15', 'send', 'lb2', 'pos', '2', 'cl', 'renew', 'admissions', 'am', 'beta2', 'gamma', 'mx5', 'portfolio', 'contest', 'box', 'mg', 'wwwold', 'neptune', 'mac', 'pms', 'traveler', 'media2', 'studio', 'sw', 'imp', 'bs', 'alfa', 'cbf4', 'servicedesk', 'wmail', 'video2', 'switch', 'sam', 'sky', 'ee', 'widget', 'reklama', 'msn', 'paris', 'tms', 'th', 'vega', 'trade', 'intern', 'ext', 'oldsite', 'learning', 'group', 'f1', 'ns22', 'ns20', 'demo3', 'bm', 'dom', 'pe', 'annuaire', 'portail', 'graphics', 'iris', 'one', 'robot', 'ams', 's7', 'foro', 'gaia', 'vpn3']
 
 
-
 def checking_subdomain(sub, domain, output_subdomain):
     try:
         domain_resolver = f"{sub}.{domain}"
@@ -47,9 +50,7 @@ def checking_subdomain(sub, domain, output_subdomain):
         if nilai_ip:
             output_subdomain.append(domain_resolver)
 
-    except dns.resolver.NXDOMAIN:
-        pass
-    except dns.resolver.NoAnswer:
+    except (dns.resolver.NXDOMAIN, dns.resolver.NoAnswer):
         pass
     except dns.resolver.Timeout:
         print(font.RED+f"a time out has occurred you should check the network".upper()+font.ECD)
@@ -69,7 +70,7 @@ def check_superdomain(domain: str):
 while True:
     try:
         print_banner(font, slowprint)
-    
+
         domain = str(input("masukkan domain: ")).lower()
 
         if not check_superdomain(domain=domain) or domain.isnumeric() or domain.startswith(("^", ",")):
@@ -118,12 +119,13 @@ while True:
         print((font.RED+f"fail subdomain : ".upper() + f"{subdomain_array.__len__() - output_subdomain.__len__()}"+font.ECD
                ))
 
+      
         user_args = str(input(
             font.CYAN + "press Y key to continues or Press any keys to stop ?".upper())).upper()
         if user_args != "Y":
             break
 
-    except (KeyboardInterrupt,EOFError):
+    except (KeyboardInterrupt, EOFError):
         break
-    
+
 # end main_function
