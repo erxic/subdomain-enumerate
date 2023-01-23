@@ -90,58 +90,60 @@ while True:
     print_banner(font, slowprint)
 
     # membaca argument dari terminal
-    domain = input("masukkan domain: ")
-    if not check_superdomain(domain=domain):
-        print(font.RED+f"domain not valid you should check the network or your domain".upper()+font.ECD)
-        for i in range(3):
-            print(i+1, end="\r")
-            time.sleep(1.00)
-        continue
-    if check_num(num=domain):
-        print("domain is not valid!")
-        for i in range(3):
-            print(i+1, end="\r")
-            time.sleep(1.00)
-        continue
+    
+    user_input = input("masukkan domain: ").split("/")
+    for domain in user_input
+        if not check_superdomain(domain=domain):
+            print(font.RED+f"domain not valid you should check the network or your domain".upper()+font.ECD)
+            for i in range(3):
+                print(i+1, end="\r")
+                time.sleep(1.00)
+            continue
+        if check_num(num=domain):
+            print("domain is not valid!")
+            for i in range(3):
+                print(i+1, end="\r")
+                time.sleep(1.00)
+            continue
 
-        
-    # untuk menghitung berapa lama enumerate dijalankan
-    start = (time.perf_counter_ns())
-    thread_pool: list[Thread] = []
-    output_subdomain = []
 
-    animated = ["=     ",
-                " =    ",
-                "  =   ",
-                "   =  ",
-                "    = ",
-                "     =",
-                "    = ",
-                "   =  ",
-                "  =   ",
-                " =    ",
-                "=     "]
-    index = 1
-    for sub in subdomain_array:
-        t = Thread(target=checking_subdomain(sub=sub, domain=domain,
-                   output_subdomain=output_subdomain))
-        t.start()
-        print(" "+animated.__getitem__(index % animated.__len__()-1) +
-              f"({index}/{subdomain_array.__len__()})\r", end="\r")
-        index += 1
-        thread_pool.append(t)
+        # untuk menghitung berapa lama enumerate dijalankan
+        start = (time.perf_counter_ns())
+        thread_pool: list[Thread] = []
+        output_subdomain = []
 
-    for pool in thread_pool:
-        pool.join()
+        animated = ["=     ",
+                    " =    ",
+                    "  =   ",
+                    "   =  ",
+                    "    = ",
+                    "     =",
+                    "    = ",
+                    "   =  ",
+                    "  =   ",
+                    " =    ",
+                    "=     "]
+        index = 1
+        for sub in subdomain_array:
+            t = Thread(target=checking_subdomain(sub=sub, domain=domain,
+                       output_subdomain=output_subdomain))
+            t.start()
+            print(" "+animated.__getitem__(index % animated.__len__()-1) +
+                  f"({index}/{subdomain_array.__len__()})\r", end="\r")
+            index += 1
+            thread_pool.append(t)
 
-    finish = (time.perf_counter_ns())
-    print(("\r"+font.UNDERLINE + "info".upper()+font.ECD))
-    print(
-        (font.WARNING + f"proses times {finish-start} nanosecond".upper()+font.ECD))
-    print((font.GREEN + f"success subdomain :".upper() +
-          output_subdomain.__str__()+font.ECD))
-    print((font.RED+f"fail subdomain : ".upper() + f"{subdomain_array.__len__() - output_subdomain.__len__()}"+font.ECD
-           ))
+        for pool in thread_pool:
+            pool.join()
+
+        finish = (time.perf_counter_ns())
+        print(("\r"+font.UNDERLINE + "info".upper()+font.ECD))
+        print(
+            (font.WARNING + f"proses times {finish-start} nanosecond".upper()+font.ECD))
+        print((font.GREEN + f"success subdomain :".upper() +
+              output_subdomain.__str__()+font.ECD))
+        print((font.RED+f"fail subdomain : ".upper() + f"{subdomain_array.__len__() - output_subdomain.__len__()}"+font.ECD
+               ))
 
     user_args = str(input(
         font.CYAN + "press Y key to continues or Press any keys to stop ?".upper())).upper()
