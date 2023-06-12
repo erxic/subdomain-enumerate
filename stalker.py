@@ -1,4 +1,4 @@
-# untuk menjwzualankan: python stalker.py {nama domain}
+# untuk menjalankan: python stalker.py {nama domain}
 import dns.resolver
 import os
 import sys
